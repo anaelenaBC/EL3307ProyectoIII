@@ -59,4 +59,10 @@ Este resultado binario es posteriormente convertido a formato BCD en el subsiste
 ![Código del subsistema de conversion](https://github.com/anaelenaBC/EL3307ProyectoIII/blob/main/codigo2.png)
 
 Finalmente, se espera que el subsistema de display muestre un cero en el dígito de las centenas, un dos en el dígito de las decenas y un cuatro en el dígito de las unidades. Para esto, se codifica el resultado en formato BCD a tres señales de salida de 7 bits cada una. Las salidas esperadas son:
-1. 
+
+1. diplaySieteSegmentosA (centenas): 1111111 (0 decimal).
+2. displaySieteSegmentosB (decenas): 0010010 (2 decimal).
+3. displaySieteSegmentosC (unidades): 1001100 (4 decimal).
+
+![Código del subsistema de display](https://github.com/anaelenaBC/EL3307ProyectoIII/blob/main/codigo3.png)
+
