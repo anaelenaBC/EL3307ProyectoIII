@@ -49,5 +49,10 @@ Considere el siguiente ejemplo. Se tienen los siguientes operandos de entrada:
 
 El subsistema de lectura obtiene estos operandos a partir de los switches de la FPGA, que deben estar en las posiciones abajo, arriba, abajo, abajo, abajo, arriba, arriba y abajo; esto si se toman a partir del SW[9] hasta el SW[2]. El cálculo de la multiplicación no da inicio hasta que se presione el botón de iniciarMultiplicacion (KEY[3] en la FPGA).
 
+![Código del subsistema de lectura](https://github.com/anaelenaBC/EL3307ProyectoIII/blob/main/codigo1.png)
+
 Cuando se presiona este botón, se envía una señal en forma de bandera al subsistema de cálculo que, empleando el algoritmo de Booth, empieza a determinar el resultado
-de manera iterativa, almacenandolo en una señal de salida de ocho bits llamada resultadoBinario.
+de manera iterativa, almacenandolo en una señal de salida de ocho bits llamada resultadoBinario. El resultado binario esperado es el número decimal 24 (representación binaria 0001 1000).
+
+Este resultado binario es posteriormente convertido a formato BCD en el subsistema de conversión. El resultado convertido se almacena en una señal de salida de doce bits llamada resultadoBCD. El resultado en formato BCD esperado es 0000 (dígito de las centenas en cero) 0010 (dígito de las decenas en dos decimal) 0100 (dígito de las unidades en cuatro decimal).
+
