@@ -66,3 +66,17 @@ Finalmente, se espera que el subsistema de display muestre un cero en el dígito
 
 ![Código del subsistema de display](https://github.com/anaelenaBC/EL3307ProyectoIII/blob/main/codigo3.png)
 
+### Análisis de consumo de recursos en la FPGA:
+
+Al ejecutar la síntesis y compilación del código del proyecto, la herramienta Quartus genera el siguiente reporte de uso de recursos:
+![Uso de recursos](https://github.com/anaelenaBC/EL3307ProyectoIII/blob/main/recursos.png)
+
+### Reporte de velocidades máximas de reloj posibles en el diseño:
+
+Al operar a una frecuencia de reloj de 50 MHz (establecidad por la FPGA), la frecuencia máxima de operación del circuito es entonces de 50 MHz (al encontrarse limitada por la placa como tal).
+
+### Análisis de principales problemas hallados durante el trabajo y de las soluciones aplicadas:
+
+1. El subsistema de cálculo en principio no realizaba correctamente la multiplicación. Tras analizar el código de ejemplo dado por el profesor, y realizarle modificaciones en el controlador, se logró calcular el resultado de forma efectiva.
+2. En principio, se desconocía como convertir de formato binario "tradicional" a formato binario BCD. Se encontró un algoritmo llamado "doble incursión" que hace la conversión, y se utilizó su código como referencia.
+3. Fue necesario volver a hacer toda la codificación de los display de siete segmentos, ya que estos operan con lógica negativa. Tras leer el manual de la FPGA, se encontró el orden correspondiente de cada segmento de los display, y se codificó correctamente.
