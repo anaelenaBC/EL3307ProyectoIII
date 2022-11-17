@@ -38,4 +38,16 @@ Levanta una bandera que le hace saber al siguiente subsistema que la conversión
 de la bandera del subsistema de conversión, para comenzar con el codificado y posterior impresión en pantalla del resultado.
 
 ### Diagrama de bloques de cada subsistema y su funcionamiento fundamental:
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+En el siguiente diagrama de bloques se puede apreciar la totalidad del circuito, y la forma en la que interconectan todas las señales asociadas a la entrada, el cálculo, la conversión y la salida de los datos. Tal como se mencionaba en el apartado anterior, el sistema se compone de cuatro módulos independientes que comparten
+una misma señal de reloj y de reinicio, pero que están conectados de forma tal que integran la resolución completa del enunciado.
+![Diagrama de bloques](https://github.com/anaelenaBC/EL3307ProyectoIII/blob/main/diagrama.png)
+
+### Ejemplo y análisis de una simulación funcional del sistema completo:
+Considere el siguiente ejemplo. Se tienen los siguientes operandos de entrada:
+1. operandoA: número decimal 4 (representación binaria 0100).
+2. operandoB: número decimal 6 (representación binaria 0110).
+
+El subsistema de lectura obtiene estos operandos a partir de los switches de la FPGA, que deben estar en las posiciones abajo, arriba, abajo, abajo, abajo, arriba, arriba y abajo; esto si se toman a partir del SW[9] hasta el SW[2]. El cálculo de la multiplicación no da inicio hasta que se presione el botón de iniciarMultiplicacion (KEY[3] en la FPGA).
+
+Cuando se presiona este botón, se envía una señal en forma de bandera al subsistema de cálculo que, empleando el algoritmo de Booth, empieza a determinar el resultado
+de manera iterativa, almacenandolo en una señal de salida de ocho bits llamada resultadoBinario.
