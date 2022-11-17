@@ -56,3 +56,7 @@ de manera iterativa, almacenandolo en una señal de salida de ocho bits llamada 
 
 Este resultado binario es posteriormente convertido a formato BCD en el subsistema de conversión. El resultado convertido se almacena en una señal de salida de doce bits llamada resultadoBCD. El resultado en formato BCD esperado es 0000 (dígito de las centenas en cero) 0010 (dígito de las decenas en dos decimal) 0100 (dígito de las unidades en cuatro decimal).
 
+![Código del subsistema de conversion](https://github.com/anaelenaBC/EL3307ProyectoIII/blob/main/codigo2.png)
+
+Finalmente, se espera que el subsistema de display muestre un cero en el dígito de las centenas, un dos en el dígito de las decenas y un cuatro en el dígito de las unidades. Para esto, se codifica el resultado en formato BCD a tres señales de salida de 7 bits cada una. Las salidas esperadas son:
+1. 
